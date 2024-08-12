@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Chamado de TI</title>
+    <style>
+        /* Estilo geral da página */
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(''); /* Caminho para a sua imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa durante o rolar da página */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-filter: none; /* Remove qualquer filtro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+        
+        /* Estilo do contêiner do formulário */
+        .container {
+            background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+            border-radius: 12px; /* Bordas arredondadas */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave */
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+        }
+        
+        /* Estilo do título */
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        /* Estilo dos campos do formulário */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #4CAF50; /* Cor da borda ao focar no campo */
+            outline: none; /* Remove o contorno padrão ao focar */
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        /* Estilo do botão */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px); /* Efeito de elevação no hover */
+        }
+        
+        /* Estilo da mensagem de sucesso */
+        .success-message {
+            text-align: center;
+            font-size: 18px;
+            color: #4CAF50;
+        }
+        .success-message a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .success-message a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Chamado de TI</h1>
+        <form action="processa_chamado.php" method="post">
+            <div class="form-group">
+                <label for="sala">Sala:</label>
+                <input type="text" id="sala" name="sala" required>
+            </div>
+            <div class="form-group">
+                <label for="andar">Andar:</label>
+                <input type="text" id="andar" name="andar" required>
+            </div>
+            <div class="form-group">
+                <label for="problema">Descrição do Problema:</label>
+                <textarea id="problema" name="problema" required></textarea>
+            </div>
+            <input type="submit" class="btn" value="Enviar Chamado">
+        </form>
+    </div>
+</body>
+</html>
